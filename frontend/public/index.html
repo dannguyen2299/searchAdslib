@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Facebook Ads Library Research Tool</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <h1>Facebook Ads Library Research Tool</h1>
+  <p class="subtitle">Tìm kiếm quảng cáo qua Meta Ad Library API chính thức</p>
+</header>
+
+<main>
+  <form id="search-form">
+    <div class="field">
+      <label for="keyword">Keyword</label>
+      <input id="keyword" name="keyword" type="text" placeholder="xe Hà Nội Sài Gòn" required />
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="VN" selected>Vietnam (VN)</option>
+          <option value="GB">United Kingdom (GB)</option>
+          <option value="DE">Germany (DE)</option>
+          <option value="FR">France (FR)</option>
+          <option value="US">United States (US)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="status">Status</label>
+        <select id="status" name="status">
+          <option value="ACTIVE" selected>Active</option>
+          <option value="INACTIVE">Inactive</option>
+          <option value="ALL">All</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="ad_type">Ad type</label>
+        <select id="ad_type" name="ad_type">
+          <option value="ALL" selected>All</option>
+          <option value="POLITICAL_AND_ISSUE_ADS">Political / Issue</option>
+          <option value="HOUSING_ADS">Housing</option>
+          <option value="EMPLOYMENT_ADS">Employment</option>
+          <option value="FINANCIAL_PRODUCTS_AND_SERVICES_ADS">Financial products/services</option>
+        </select>
+      </div>
+    </div>
+
+    <button type="submit">Search Ads</button>
+  </form>
+
+  <p class="api-scope-note">
+    Lưu ý theo tài liệu chính thức của Meta: với quốc gia ngoài EU/UK, Ad Library API
+    chỉ trả về quảng cáo về <strong>chính trị / bầu cử / vấn đề xã hội</strong>, không
+    trả về quảng cáo thương mại thông thường. Chọn EU/UK để tìm quảng cáo thương mại.
+  </p>
+
+  <div id="notice" class="notice hidden"></div>
+  <div id="status-message" class="status-message hidden"></div>
+  <div id="results"></div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
